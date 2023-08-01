@@ -1,0 +1,29 @@
+.invalid-btn {
+  background-color: darkred;
+  /* Add any other styles as needed for the invalid state */
+  border: none;
+}
+
+.valid-btn {
+  background-color: darkgreen;
+  border: none;
+  /* Add any other styles as needed for the valid state */
+}
+
+.invalid-btn:hover{
+  background-color: darkred;
+
+}
+.valid-btn:hover{
+  background-color: darkgreen;
+
+}
+
+input.ng-invalid.ng-touched {
+  border: 1px solid darkred;
+}
+
+.head{
+  text-align: center;
+}
+

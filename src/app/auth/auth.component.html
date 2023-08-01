@@ -1,0 +1,48 @@
+<h2 class="head">{{ isLoggedIn ? 'Login':'Register' }}</h2>
+  <div class="row">
+    <div class="col-xs-12 col-md-6 col-md-offset-3">
+
+      <div class="alert alert-danger" *ngIf="error">
+        <p>{{ error }}</p>
+      </div>
+      <div *ngIf="isLoadingSpinner" style="text-align: center; margin-top: 4rem">
+        <app-loading-spiner></app-loading-spiner>
+      </div>
+
+      <form #authForm = 'ngForm' (ngSubmit)="onSubmit(authForm)" *ngIf="!isLoadingSpinner">
+        <div class="form-group">
+          <label for="email">E-Mail <span class="red-asterisk" style="color: darkred"> * </span></label>
+          <input
+            type="email"
+            id="email"
+            class="form-control"
+            name="email"
+            ngModel
+            email
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="password">Password <span class="red-asterisk" style="color: darkred"> * </span></label>
+          <input
+            type="password"
+            id="password"
+            class="form-control"
+            ngModel
+            name="password"
+            minlength="6"
+            required
+
+          />
+        </div>
+        <div>
+          <button class="btn btn-primary" type="submit" [ngClass]="{'invalid-btn': !authForm.valid, 'valid-btn': authForm.valid}" [disabled]="!authForm.valid">
+            {{ isLoggedIn ? 'Login' : 'Register' }}
+          </button>         |
+          <button class="btn btn-primary" (click)="onSwitchMode()">{{  isLoggedIn ? 'Switch To Register':'Switch To Login'  }}</button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+

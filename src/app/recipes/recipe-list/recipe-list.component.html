@@ -1,0 +1,32 @@
+<div class="row">
+  <div class="col-xs-12">
+    <button mat-mini-fab color="warn" (click)="onNewRecipe()" aria-label="Example icon button with a filter list icon">
+      <mat-icon>add</mat-icon>
+    </button>
+
+  </div>
+</div>
+<hr>
+<div class="row">
+  <div class="col-xs-12">
+
+    <ng-container *ngFor="let recipeEl of recipes; let i = index">
+      <app-recipe-item [recipe]="recipeEl" [index]="i" class="recipe-item">
+      </app-recipe-item>
+      <br>
+    </ng-container>
+  </div>
+</div>
+<p>{{message.age}}</p>
+
+
+
+
+<!--Giving data to the parent from this child component-->
+
+<input type="text" name="name" id="name" #toParent>
+<br>
+<br>
+<button class="btn btn-primary" (click)="add(toParent.value)">SEND</button>
+
+
