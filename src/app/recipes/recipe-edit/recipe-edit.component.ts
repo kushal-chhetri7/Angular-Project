@@ -3,6 +3,10 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
 import { FormGroup, FormControl, FormArray, Validators } from '@angular/forms';
 
 import { RecipeService } from '../recipe.service';
+import {AngularFireStorage} from "@angular/fire/compat/storage";
+
+
+
 
 @Component({
   selector: 'app-recipe-edit',
@@ -13,26 +17,18 @@ export class RecipeEditComponent implements OnInit {
   id: number;
   editMode = false;
   recipeForm: FormGroup;
-
-  get recipeControls() {
-    return (this.recipeForm.get('ingredients') as FormArray).controls
-  }
+  path!: File;
 
   constructor(private route: ActivatedRoute,
               private recipeService: RecipeService,
-              private router: Router) {
+              private router: Router,
+
+
+  ) {
   }
 
-  ngOnInit() {
-    this.route.params
-      .subscribe(
-        (params: Params) => {
-          this.id = +params['id'];
-          this.editMode = params['id'] != null;
-          this.initForm();
-        }
-      );
-  }
+
+
 
   onSubmit() {
     // const newRecipe = new Recipe(
@@ -44,9 +40,34 @@ export class RecipeEditComponent implements OnInit {
       this.recipeService.updateRecipe(this.id, this.recipeForm.value);
     } else {
       this.recipeService.addRecipe(this.recipeForm.value);
+
     }
     this.onCancel();
+    console.log(this.path)
+
   }
+
+
+  get recipeControls() {
+    return (this.recipeForm.get('ingredients') as FormArray).controls
+  }
+
+
+
+
+  ngOnInit() {
+    console.log("NGON INT Started")
+    this.route.params
+      .subscribe(
+        (params: Params) => {
+          this.id = +params['id'];
+          this.editMode = params['id'] != null;
+          this.initForm();
+        }
+      );
+
+  }
+
 
   onAddIngredient() {
     (<FormArray>this.recipeForm.get('ingredients')).push(

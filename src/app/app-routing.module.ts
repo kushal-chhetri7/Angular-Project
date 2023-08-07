@@ -15,7 +15,11 @@ const appRoutes: Routes = [
   {path:'shopping-list', loadChildren: ()=> import('./shopping-list/shopping.module')
       .then(m => m.ShoppingModule)},
   {path:'auth', loadChildren: ()=> import('./auth/auth.module')
-      .then(m => m.AuthModule)}
+      .then(m => m.AuthModule),
+
+
+  }
+
 
 ];
 

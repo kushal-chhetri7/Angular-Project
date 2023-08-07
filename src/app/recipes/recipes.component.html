@@ -1,6 +1,8 @@
+
+
 <div class="row">
   <div class="col-md-5">
-    <app-recipe-list [message]="parentMessage"   (toParent)="add($event)"></app-recipe-list>
+    <app-recipe-list [message]="parentMessage"  (toParent)="add($event)"></app-recipe-list>
   </div>
   <div class="col-md-7">
     <router-outlet></router-outlet>
@@ -8,4 +10,4 @@
 </div>
 
 
-<p> MESSAGE FROM CHILD: {{newMessage}}</p>
+<!--<p> MESSAGE FROM CHILD: {{newMessage}}</p>-->
