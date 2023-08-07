@@ -13,7 +13,10 @@ const appRoutes: Routes = [
   },
   //implementing lazy loading here
   {path:'shopping-list', loadChildren: ()=> import('./shopping-list/shopping.module')
-      .then(m => m.ShoppingModule)},
+      .then(m => m.ShoppingModule),
+    data:{
+      breadcrumb:'Shopping List'
+    }},
   {path:'auth', loadChildren: ()=> import('./auth/auth.module')
       .then(m => m.AuthModule),
 

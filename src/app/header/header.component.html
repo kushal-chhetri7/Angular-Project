@@ -9,7 +9,7 @@
         <li routerLinkActive="active"><a routerLink="/recipes" *ngIf="isAuthenticated" >Recipes</a></li>
         <li routerLinkActive="active"><a routerLink="/shopping-list">Shopping List</a></li>
         <li routerLinkActive="active"><a routerLink="/auth" *ngIf="!isAuthenticated" >Authenticate</a></li>
-        <li><a style=" color: darkred; font-weight: bold"  *ngIf="isAuthenticated">Hello {{userEmail}}</a></li>
+        <li><a style="color: darkred; font-weight: bold" *ngIf="isAuthenticated">Hello {{userEmail.split('@')[0]}}</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
@@ -26,3 +26,6 @@
     </div>
   </div>
 </nav>
+
+<app-breadcrumb *ngIf="isAuthenticated"></app-breadcrumb>
+<h5>Welcome To Recipe</h5>
