@@ -9,17 +9,35 @@ import {RecipeResolverService} from "../shared/recipe-resolver.service";
 
 
 const recipeRoutes:Routes = [
-  { path: '', canActivate:[AuthGuard], component: RecipesComponent, children: [
+  { path: '', canActivate:[AuthGuard], component: RecipesComponent, data :
+      { breadcrumb: 'Recipes'},
+    children: [
 
-      { path: '', component: RecipeStartComponent },
+      { path: '', component: RecipeStartComponent,
+        data : {
+        breadcrumb: ''
+      },
+      },
 
-      { path: 'new', component: RecipeEditComponent },
+      { path: 'new', component: RecipeEditComponent,
+        data : {
+        breadcrumb: 'New Recipe'
+      }
+      },
 
       { path: ':id', component: RecipeDetailComponent,
-        resolve:[RecipeResolverService]},
+        resolve:[RecipeResolverService],
+        data : {
+        breadcrumb: 'Recipe Detail'
+      }
+      },
 
       { path: ':id/edit', component: RecipeEditComponent,
-        resolve:[RecipeResolverService] },
+        resolve:[RecipeResolverService],
+        data : {
+        breadcrumb: 'Edit Recipe Details'
+      }
+      },
 
     ] },
 ]

@@ -9,12 +9,10 @@ import {RecipeItemComponent} from "./recipe-list/recipe-item/recipe-item.compone
 import {RecipeStartComponent} from "./recipe-start/recipe-start.component";
 import {RecipeEditComponent} from "./recipe-edit/recipe-edit.component";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {MatButtonModule} from "@angular/material/button";
 import {MatIconModule} from "@angular/material/icon";
 import {HttpClientModule} from "@angular/common/http";
 import {RecipeRoutesModule} from "./recipe-routes.module";
-
 
 
 @NgModule({
@@ -25,6 +23,7 @@ declarations:[
   RecipeItemComponent,
   RecipeStartComponent,
   RecipeEditComponent,
+
 ],
   imports:[
     RouterModule,
@@ -35,6 +34,7 @@ declarations:[
     HttpClientModule,
     RecipeRoutesModule,
     SharedModule,
+
   ],
 
 })
