@@ -9,7 +9,6 @@ import {SharedModule} from "../shared/shared.module";
 const shoppingRoutes: Routes = [
   { path: '', component: ShoppingListComponent },
 
-
 ];
 
 @NgModule({

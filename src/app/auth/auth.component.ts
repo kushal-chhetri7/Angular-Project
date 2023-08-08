@@ -23,6 +23,7 @@ export class AuthComponent {
 
   }
   onSubmit(form:NgForm){
+    debugger
     if(!form.valid){
       return;
     }
@@ -50,7 +51,8 @@ export class AuthComponent {
       this.isLoadingSpinner=false
     })
 
-    form.resetForm()
+    form.resetForm();
+    
 
   }
 
