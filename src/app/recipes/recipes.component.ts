@@ -15,6 +15,7 @@ export class RecipesComponent implements OnInit {
       class:24,
       age:99
     };
+    
   newMessage:string
 
 //getting properties from recipe-list child component
@@ -24,6 +25,7 @@ export class RecipesComponent implements OnInit {
 
   //getting data from child component RecipeListComponent
   add(toParent:string){
+
     this.newMessage = toParent
 
 

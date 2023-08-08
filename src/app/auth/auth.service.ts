@@ -91,6 +91,8 @@ export class AuthService {
       this.autoLogout(expiresIn * 1000)
     localStorage.setItem('userData', JSON.stringify(user))     //saving user email and all in the localstorage to keep him/her logged in and not vanishing the data when page is refreshed
   }
+
+  
   private handleError(errorRes:HttpErrorResponse){
     let errorMessage = "An Unexpected Error occurred!!"
     if (!errorRes.error || !errorRes.error.error){

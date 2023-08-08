@@ -18,8 +18,9 @@ export class RecipeListComponent implements OnInit, OnDestroy {
 
   @Input() message:any
 
-
+//sending value to parent from this user input child component
   @Output() toParent = new EventEmitter<string>();
+
   add(value:string){
     this.toParent.emit(value);
 
