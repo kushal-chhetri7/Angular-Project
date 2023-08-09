@@ -1,7 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { AuthService } from "./auth/auth.service";
 import { Observable } from 'rxjs';
-import { StatuscontainerComponent } from "./statuscontainer/statuscontainer.component";
 
 
 @Component({

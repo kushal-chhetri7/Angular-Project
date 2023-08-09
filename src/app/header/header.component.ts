@@ -14,6 +14,7 @@ export class HeaderComponent implements OnInit, OnDestroy{
   isAuthenticated = false
   userEmail:string
 
+
   private sub:Subscription
   @ViewChild(StatuscontainerComponent) statusContainer: StatuscontainerComponent;
 
@@ -27,6 +28,7 @@ export class HeaderComponent implements OnInit, OnDestroy{
 
 
     const container = this.statusContainer.dynamicComponentContainer;
+    console.log("container:  " + container)
     this.dynamicComponentService.renderComponent('online', container);
   }
 
@@ -51,6 +53,8 @@ export class HeaderComponent implements OnInit, OnDestroy{
     const container = this.statusContainer.dynamicComponentContainer;
     const status = online ? 'online' : 'offline';
     this.dynamicComponentService.renderComponent(status, container);
+
+
 
   }
 
