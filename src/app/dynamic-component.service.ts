@@ -26,9 +26,9 @@ export class DynamicComponentService {
     }
 
     if (componentType) {
-      return  container.createComponent(componentType);
+      return container.createComponent(componentType);
     }
-
     return null;
   }
+
 }
