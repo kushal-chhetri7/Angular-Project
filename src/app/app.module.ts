@@ -14,6 +14,11 @@ import { AngularFireStorageModule } from "@angular/fire/compat/storage";
 import { AngularFireModule } from "@angular/fire/compat";
 import { BreadcrumbComponent } from "./breadcrump/breadcrumb.component";
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {StatuscontainerComponent} from "./statuscontainer/statuscontainer.component";
+import {OnlineComponent} from "./online/online.component";
+import {OfflineComponent} from "./offline/offline.component";
+import {DynamicComponentService} from "./dynamic-component.service";
+import {MatSlideToggleModule} from "@angular/material/slide-toggle";
 
 
 
@@ -27,6 +32,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AppComponent,
     HeaderComponent,
     BreadcrumbComponent,
+    StatuscontainerComponent,
+    OnlineComponent,
+    OfflineComponent,
 
 
 
@@ -51,12 +59,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     }),
     AngularFireStorageModule,
     FormsModule,
-    ReactiveFormsModule
-
+    ReactiveFormsModule,
+    MatSlideToggleModule
 
 
   ],
-  providers: [ShoppingListService, RecipeService, { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true }],
+  providers: [ShoppingListService,DynamicComponentService, RecipeService, { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

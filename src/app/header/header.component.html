@@ -12,12 +12,19 @@
         <li><a style="color: darkred; font-weight: bold" *ngIf="isAuthenticated">Hello {{userEmail.split('@')[0]}}</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
+        <li *ngIf="isAuthenticated">
+          <div class="status-container">
+            <span class="status-label">Status:</span>
+            <mat-slide-toggle (change)="toggleStatus($event.checked)" checked="true"><app-statuscontainer></app-statuscontainer></mat-slide-toggle>
+          </div>
+        </li>
         <li>
           <a style="cursor: pointer" *ngIf="isAuthenticated" (click)="Logout()">Logout</a>
         </li>
         <li class="dropdown" appDropdown *ngIf="isAuthenticated">
           <a style="cursor: pointer;" class="dropdown-toggle" role="button">Manage <span class="caret"></span></a>
           <ul class="dropdown-menu">
+
             <li><a style="cursor: pointer;" (click)="addingRecipeToDatabase()">Save Data</a></li>
             <li><a style="cursor: pointer;" (click)="fetchRecipeFromDatabase()">Fetch Data</a></li>
           </ul>
