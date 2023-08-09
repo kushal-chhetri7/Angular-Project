@@ -15,6 +15,12 @@ import { HttpClientModule } from "@angular/common/http";
 import { RecipeRoutesModule } from "./recipe-routes.module";
 import { MailComponent } from "./mail/mail.component";
 
+import {StatuscontainerComponent} from "./statuscontainer/statuscontainer.component";
+import {DynamicComponentService} from "./dynamic-component.service";
+import { OnlineComponent } from './online/online.component';
+import { OfflineComponent } from './offline/offline.component';
+import {MatSlideToggleModule} from "@angular/material/slide-toggle";
+
 
 @NgModule({
   declarations: [
@@ -24,7 +30,11 @@ import { MailComponent } from "./mail/mail.component";
     RecipeItemComponent,
     RecipeStartComponent,
     RecipeEditComponent,
-    MailComponent
+    MailComponent,
+
+    StatuscontainerComponent,
+    OnlineComponent,
+    OfflineComponent,
 
   ],
   imports: [
@@ -38,9 +48,11 @@ import { MailComponent } from "./mail/mail.component";
     SharedModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatSlideToggleModule
 
   ],
+  providers:[DynamicComponentService]
 
 })
 
