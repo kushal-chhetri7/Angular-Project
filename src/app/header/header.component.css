@@ -1,0 +1,26 @@
+.status-container {
+  display: flex;
+  align-items: center;
+}
+
+.status-label {
+  margin-right: 10px;
+}
+.
+.green-slide-toggle .mat-slide-toggle-bar {
+  background-color: rgba(0, 128, 0, 0.3); /* Change the slide toggle bar color */
+}
+.green-slide-toggle .mat-slide-toggle-thumb {
+  background-color: green; /* Change the slide toggle thumb color */
+}
+.navbar-nav {
+  display: flex;
+  align-items: center; /* Align vertically in the middle */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-nav li {
+  margin-right: 10px; /* Add some spacing between items */
+}

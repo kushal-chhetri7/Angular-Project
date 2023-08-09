@@ -13,7 +13,7 @@ export class StatuscontainerComponent  {
   constructor(private dynamicComponentService: DynamicComponentService) {}
 
   ngAfterViewInit() {
-    this.dynamicComponentService.renderComponent('offline', this.dynamicComponentContainer);
+    this.dynamicComponentService.renderComponent('online', this.dynamicComponentContainer);
   }
 
 

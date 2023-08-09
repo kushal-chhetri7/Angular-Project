@@ -7,7 +7,7 @@ import {OfflineComponent} from "./offline/offline.component";
   providedIn: 'root',
 })
 export class DynamicComponentService {
-  constructor(private componentFactoryResolver: ComponentFactoryResolver) {}
+  constructor() {}
 
   renderComponent(status: string, container: ViewContainerRef): ComponentRef<any> {
     container.clear();
@@ -26,8 +26,7 @@ export class DynamicComponentService {
     }
 
     if (componentType) {
-      const componentFactory = this.componentFactoryResolver.resolveComponentFactory(componentType);
-      return container.createComponent(componentFactory);
+      return  container.createComponent(componentType);
     }
 
     return null;
