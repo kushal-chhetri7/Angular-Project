@@ -41,6 +41,16 @@
           </button>         |
           <button class="btn btn-primary" (click)="onSwitchMode()">{{  isLoggedIn ? 'Switch To Register':'Switch To Login'  }}</button>
         </div>
+
+        <br>
+        <br>
+        <ngx-recaptcha2
+          name="recaptcha"
+                [(ngModel)]="recaptchaResponse"
+                [siteKey]="reCAPTCHA_site_key"
+                (ngModelChange)="onRecaptchaChange($event)"
+        ></ngx-recaptcha2>
+
       </form>
 
     </div>
