@@ -47,14 +47,15 @@ export class HeaderComponent implements OnInit, OnDestroy{
 
 
   Logout(){
-    this.authService.logout()
+    this.authService.logout();
+
+    //set the status to false after logout()
+
   }
   toggleStatus(online: boolean) {
     const container = this.statusContainer.dynamicComponentContainer;
     const status = online ? 'online' : 'offline';
     this.dynamicComponentService.renderComponent(status, container);
-
-
 
   }
 

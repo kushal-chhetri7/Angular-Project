@@ -10,6 +10,7 @@ export class OfflineComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+
   }
 
 }
