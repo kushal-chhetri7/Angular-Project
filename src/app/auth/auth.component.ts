@@ -3,6 +3,7 @@ import {NgForm} from "@angular/forms";
 import {AuthResponseData, AuthService} from "./auth.service";
 import {Observable} from "rxjs";
 
+
 import {Router} from "@angular/router";
 
 @Component({
@@ -12,21 +13,35 @@ import {Router} from "@angular/router";
 })
 
 export class AuthComponent {
+  reCAPTCHA_site_key = '6LcIupUnAAAAAJ9sLmuGgOKyEXnZaMu8tQq4PnPy';
+  recaptchaResponse: string;
+
 
   isLoggedIn = true;
   isLoadingSpinner = false;
   error:string=null;
   constructor( private authService:AuthService, private router:Router) {
   }
+
+  onRecaptchaChange(event: string): void {
+    this.recaptchaResponse = event;
+  }
+
+
   onSwitchMode(){
     this.isLoggedIn = !this.isLoggedIn
 
   }
   onSubmit(form:NgForm){
-    debugger
+
     if(!form.valid){
       return;
     }
+    if (!this.recaptchaResponse) {
+      this.error = 'Please complete the reCAPTCHA.';
+      return;
+    }
+
     const email = form.value.email
     const password = form.value.password
     this.isLoadingSpinner=true
@@ -52,7 +67,7 @@ export class AuthComponent {
     })
 
     form.resetForm();
-    
+
 
   }
 

@@ -17,18 +17,10 @@ export class AppComponent implements OnInit {
   constructor(private authService: AuthService, ) {
   }
 
-
-
   ngOnInit(): void {
     this.authService.autoLogin()
+
   }
-
-
-
-
-
-
-
 
   ngAfterViewInit() {
     console.log(this.marker)
@@ -80,6 +72,7 @@ getOff(input).subscribe(
   result => {
     console.log(result);
   },
+
   error => {
     console.error(error);
   }

@@ -21,7 +21,7 @@ const appRoutes: Routes = [
     }
   },
   {
-    path: 'auth', loadChildren: () => import('./auth/auth.module')
+    path: 'auth', loadChildren:  () : Promise<any> => import('./auth/auth.module')
       .then(m => m.AuthModule),
 
 
