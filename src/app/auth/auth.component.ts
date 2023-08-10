@@ -5,6 +5,7 @@ import {Observable} from "rxjs";
 
 
 import {Router} from "@angular/router";
+import {environment} from "../../environments/environment";
 
 @Component({
   selector:'app-auth',
@@ -13,7 +14,7 @@ import {Router} from "@angular/router";
 })
 
 export class AuthComponent {
-  reCAPTCHA_site_key = '6LcIupUnAAAAAJ9sLmuGgOKyEXnZaMu8tQq4PnPy';
+  reCAPTCHA_site_key = environment.reCAPTCHAKEY;
   recaptchaResponse: string;
 
 
