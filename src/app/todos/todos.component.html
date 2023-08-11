@@ -1,0 +1,29 @@
+<div class="main">
+  <h3>Todo List</h3>
+  <div *ngIf="error">
+    <p>Error: {{ error }}</p>
+  </div>
+
+  <form class="form" [formGroup]="todoForm" (ngSubmit)="addTodo()">
+    <input class="input" type="text" name="name" placeholder="Enter Title" formControlName="name"/>
+    <br />
+    <input class="input" type="text" name="description"  placeholder="Enter Description"  formControlName="description"/>
+    <br />
+    <button class="btn btn-success" [disabled]="todoForm.invalid" style="width: 60rem; height: 4rem;">SUBMIT</button>
+  </form>
+  <br>
+  <br>
+  <br>
+  <br>
+  <div class="todo-container" *ngIf="todos">
+    <ul>
+      <li *ngFor="let todo of todos">
+        <div class="todo">
+        <span class="todo-name">{{ todo.name }}</span>
+        <span class="todo-description">{{ todo.description }}</span>
+      </div>
+        <button class="btn btn-danger" style="background-color: darkred" (click)="deleteTodo(todo.id)"><i class="fas fa-trash-alt"></i></button>
+      </li>
+    </ul>
+  </div>
+  </div>
