@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ContactService } from '../../contact.service';
+import {Name} from "../enum";
 
 @Component({
   selector: 'app-mail',
@@ -27,8 +28,6 @@ export class MailComponent implements OnInit {
         FNAME: this.FNAME,
         COMMENTS: this.Comment
       }
-
-
 
     }
 

@@ -24,4 +24,5 @@ import {NgxCaptchaModule} from "ngx-captcha";
 })
 export class AuthModule{
 
+
 }

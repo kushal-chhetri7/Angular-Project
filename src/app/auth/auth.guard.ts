@@ -23,6 +23,7 @@ export class AuthGuard implements CanActivate {
             return this.router.createUrlTree(['/auth'])   //using UrlTree to redirect the user to auth page if he tries to acces the recipe page without login or registering
         }));
 
+
     }
 
 }

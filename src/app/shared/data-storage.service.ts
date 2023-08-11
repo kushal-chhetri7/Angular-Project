@@ -26,7 +26,7 @@ export class DataStorageService {
   getRecipe(){
       return this.http
         .get<Recipe[]>('https://udemypracticeproject-5b98a-default-rtdb.firebaseio.com/recipes.json')
-        .pipe(map( recipes =>{                     //this is ts map function of angular
+        .pipe(map ( recipes => {                     //this is ts map function of angular
             return recipes.
             map( recipe => {                //this is normal js map
               return { ...recipe,
@@ -34,8 +34,10 @@ export class DataStorageService {
       })
     }),tap( response => {
       this.recipeService.setRecipe(response)
+
     }));
   }
+
 
 
 }

@@ -1,10 +1,14 @@
+
 import {Injectable} from '@angular/core';
+import {Injectable, ViewChild} from '@angular/core';
 import {HttpClient, HttpErrorResponse} from "@angular/common/http";
 import {catchError, tap} from "rxjs/operators";
 import {BehaviorSubject, throwError} from "rxjs";
 import {User} from "./user.model";
 import {Router} from "@angular/router";
 import {environment} from "../../environments/environment";
+import {DynamicComponentService} from "../dynamic-component.service";
+import {StatuscontainerComponent} from "../statuscontainer/statuscontainer.component";
 
 
 export interface AuthResponseData {
@@ -69,10 +73,19 @@ export class AuthService {
         this.user.next(null);
         this.router.navigate(['/auth'])
         localStorage.removeItem('userData')
+
         if (this.timeOutWhenUserPressedLogout) {
             clearTimeout(this.timeOutWhenUserPressedLogout)
         }
         this.timeOutWhenUserPressedLogout = null;
+
+
+
+      if(this.timeOutWhenUserPressedLogout) {
+        clearTimeout(this.timeOutWhenUserPressedLogout)
+      }
+      this.timeOutWhenUserPressedLogout = null;
+
     }
 
 
