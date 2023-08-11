@@ -6,23 +6,26 @@ import {exhaustMap, take} from "rxjs/operators";
 
 
 @Injectable({
-  providedIn:'root'
+    providedIn: 'root'
 })
 
 export class AuthInterceptorService implements HttpInterceptor {
-  constructor(private authService:AuthService) {
-  }
-  intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-   return this.authService.user.pipe( take(1),
-     exhaustMap(user => {               //exhaustMap basically takes two observables and executes first observable and once its completed it replaces that with another observable
+    constructor(private authService: AuthService) {
+    }
 
-       if(!user){
-         return next.handle(req)
-       }
-       const modifiedheaded = req.clone({params:new HttpParams().set('auth', user.token)})
-       return next.handle(modifiedheaded)
-   }));
-  }
+    intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+        return this.authService.user.pipe(take(1),
+            exhaustMap(user => {               //exhaustMap basically takes two observables and executes first observable and once its completed it replaces that with another observable
+
+                if (!user) {
+                    return next.handle(req)
+                }
+                const modifiedheaded = req.clone({params: new HttpParams().set('auth', user.token)})
+                return next.handle(modifiedheaded)
+            }));
+    }
+
+
 
 }
 
