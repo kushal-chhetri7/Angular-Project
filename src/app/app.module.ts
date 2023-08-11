@@ -19,6 +19,10 @@ import {OnlineComponent} from "./online/online.component";
 import {OfflineComponent} from "./offline/offline.component";
 import {DynamicComponentService} from "./dynamic-component.service";
 import {MatSlideToggleModule} from "@angular/material/slide-toggle";
+import { GraphQLModule } from './graphql.module';
+import {TodosComponent} from "./todos/todos.component";
+
+
 
 
 
@@ -35,6 +39,7 @@ import {MatSlideToggleModule} from "@angular/material/slide-toggle";
     StatuscontainerComponent,
     OnlineComponent,
     OfflineComponent,
+    TodosComponent
 
 
 
@@ -44,6 +49,7 @@ import {MatSlideToggleModule} from "@angular/material/slide-toggle";
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    GraphQLModule,
     BrowserAnimationsModule,
     CoreModule,
     SharedModule,

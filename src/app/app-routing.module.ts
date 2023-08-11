@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule, LoadChildren, PreloadingStrategy } from '@angular/router';
+import {TodosComponent} from "./todos/todos.component";
 
 
 
@@ -23,8 +24,9 @@ const appRoutes: Routes = [
   {
     path: 'auth', loadChildren:  () : Promise<any> => import('./auth/auth.module')
       .then(m => m.AuthModule),
-
-
+  },
+  {
+    path: 'todo', component:TodosComponent
   }
 
 

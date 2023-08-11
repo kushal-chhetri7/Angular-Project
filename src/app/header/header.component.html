@@ -8,6 +8,8 @@
       <ul class="nav navbar-nav">
         <li routerLinkActive="active"><a routerLink="/recipes" *ngIf="isAuthenticated" >Recipes</a></li>
         <li routerLinkActive="active"><a routerLink="/shopping-list">Shopping List</a></li>
+        <li routerLinkActive="active"><a routerLink="/todo">Todo</a></li>
+
         <li routerLinkActive="active"><a routerLink="/auth" *ngIf="!isAuthenticated" >Authenticate</a></li>
         <li><a style="color: darkred; font-weight: bold" *ngIf="isAuthenticated">Hello {{userEmail.split('@')[0]}}</a></li>
       </ul>
