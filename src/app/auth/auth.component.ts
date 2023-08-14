@@ -17,6 +17,12 @@ export class AuthComponent {
     reCAPTCHA_site_key = environment.reCAPTCHAKEY;
     recaptchaResponse: string;
 
+    showPassword = false;
+
+    togglePasswordVisibility() {
+        this.showPassword = !this.showPassword;
+    }
+
 
     isLoggedIn = true;
     isLoadingSpinner = false;
