@@ -17,11 +17,12 @@
         <li *ngIf="isAuthenticated">
           <div class="status-container">
             <span class="status-label">Status:</span>
-            <mat-slide-toggle (change)="toggleStatus($event.checked)" checked="true"><app-statuscontainer></app-statuscontainer></mat-slide-toggle>
+            <mat-slide-toggle (change)="toggleStatus($event.checked)" checked="true"><app-statuscontainer></app-statuscontainer></mat-slide-toggle> &nbsp;
+
           </div>
         </li>
         <li>
-          <a style="cursor: pointer" *ngIf="isAuthenticated" (click)="Logout()">Logout</a>
+          <a style="cursor: pointer; background-color: darkred; color: whitesmoke; border-radius: 0.5rem; margin-top: 1px; margin-bottom: 3px; height: 45px; text-align: center"  *ngIf="isAuthenticated"   (click)="Logout()">Logout &nbsp; <i class="fas fa-sign-out-alt"></i></a>
         </li>
         <li class="dropdown" appDropdown *ngIf="isAuthenticated">
           <a style="cursor: pointer;" class="dropdown-toggle" role="button">Manage <span class="caret"></span></a>

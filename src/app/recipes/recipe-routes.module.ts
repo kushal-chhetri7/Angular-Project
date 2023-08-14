@@ -36,9 +36,9 @@ const recipeRoutes:Routes = [
         resolve:[RecipeResolverService],
         data : {
         breadcrumb: 'Edit Recipe Details'
+
       }
       },
-
     ] },
 ]
 @NgModule({
