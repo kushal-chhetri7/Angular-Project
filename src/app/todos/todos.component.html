@@ -1,5 +1,5 @@
 <div class="main">
-  <h3>Todo List</h3>
+  <h3>Todo List Using <span style="color: darkred">GraphQL</span></h3>
   <div *ngIf="error">
     <p>Error: {{ error }}</p>
   </div>
@@ -15,6 +15,7 @@
   <br>
   <br>
   <br>
+
   <div class="todo-container" *ngIf="todos">
     <ul>
       <li *ngFor="let todo of todos">
@@ -27,3 +28,4 @@
     </ul>
   </div>
   </div>
+

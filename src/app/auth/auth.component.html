@@ -24,17 +24,34 @@
         </div>
         <div class="form-group">
           <label for="password">Password <span class="red-asterisk" style="color: darkred"> * </span></label>
-          <input
-            type="password"
-            id="password"
-            class="form-control"
-            ngModel
-            name="password"
-            minlength="6"
-            required
-
-          />
+          <div class="input-group">
+            <input style="width: 500px; padding-right: 2px"
+                    type="{{ showPassword ? 'text' : 'password' }}"
+                    id="password"
+                    class="form-control"
+                    ngModel
+                    name="password"
+                    minlength="6"
+                    required
+            />
+              <button style="margin-left:12px "
+                      class="btn btn-outline-secondary"
+                      type="button"
+                      (click)="togglePasswordVisibility()"
+              >
+                <i
+                        class="fa"
+                        [ngClass]="{
+            'fa-eye': !showPassword,
+            'fa-eye-slash': showPassword
+          }"
+                ></i>
+              </button>
+          </div>
         </div>
+
+
+
         <div>
           <button class="btn btn-primary" type="submit" [ngClass]="{'invalid-btn': !authForm.valid, 'valid-btn': authForm.valid}" [disabled]="!authForm.valid">
             {{ isLoggedIn ? 'Login' : 'Register' }}
