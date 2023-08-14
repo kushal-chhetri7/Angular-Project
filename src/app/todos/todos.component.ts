@@ -49,7 +49,7 @@ export class TodosComponent implements OnInit {
       refetchQueries: [{
         query: GET_TODOS
       }]
-    }).subscribe(({data}: any) => {
+    }).subscribe((data: any) => {
       this.todos = data.deleteTodo;
     }
     , (error) => {

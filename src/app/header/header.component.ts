@@ -28,7 +28,6 @@ export class HeaderComponent implements OnInit, OnDestroy{
 
 
     const container = this.statusContainer.dynamicComponentContainer;
-    console.log("container:  " + container)
     this.dynamicComponentService.renderComponent('online', container);
   }
 

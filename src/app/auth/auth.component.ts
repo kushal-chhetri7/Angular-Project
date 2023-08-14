@@ -18,7 +18,6 @@ export class AuthComponent {
     recaptchaResponse: string;
 
     showPassword = false;
-
     togglePasswordVisibility() {
         this.showPassword = !this.showPassword;
     }
@@ -29,10 +28,12 @@ export class AuthComponent {
     error: string = null;
 
     constructor(private authService: AuthService, private router: Router) {
+
     }
 
     onRecaptchaChange(event: string): void {
         this.recaptchaResponse = event;
+
     }
 
     onSwitchMode() {
@@ -75,6 +76,7 @@ export class AuthComponent {
         })
 
         form.resetForm();
+
 
 
     }
