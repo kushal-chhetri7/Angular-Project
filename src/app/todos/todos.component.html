@@ -10,6 +10,9 @@
     <input class="input" type="text" name="description"  placeholder="Enter Description"  formControlName="description"/>
     <br />
     <button class="btn btn-success" [disabled]="todoForm.invalid" style="width: 60rem; height: 4rem;">SUBMIT</button>
+    <br>
+    <button class="btn btn-primary" (click)="onClear()" [disabled]="!todoForm.dirty" style="width: 60rem; height: 4rem;">CLEAR</button>
+
   </form>
   <br>
   <br>

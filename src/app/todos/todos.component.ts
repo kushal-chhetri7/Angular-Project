@@ -68,7 +68,14 @@ export class TodosComponent implements OnInit {
       this.error = error;
   }
   );
+
   }
+
+
+  onClear(){
+    this.todoForm.reset()
+  }
+
 
 
 
