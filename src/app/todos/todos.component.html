@@ -12,23 +12,50 @@
     <button class="btn btn-success" [disabled]="todoForm.invalid" style="width: 60rem; height: 4rem;">SUBMIT</button>
     <br>
     <button class="btn btn-primary" (click)="onClear()" [disabled]="!todoForm.dirty" style="width: 60rem; height: 4rem;">CLEAR</button>
-
   </form>
   <br>
   <br>
   <br>
   <br>
+  </div>
 
-  <div class="todo-container" *ngIf="todos">
-    <ul>
-      <li *ngFor="let todo of todos">
-        <div class="todo">
-        <span class="todo-name">{{ todo.name }}</span>
-        <span class="todo-description">{{ todo.description }}</span>
-      </div>
-        <button class="btn btn-danger" style="background-color: darkred" (click)="deleteTodo(todo.id)"><i class="fas fa-trash-alt"></i></button>
-      </li>
-    </ul>
+<div class="center">
+<div class="example-container">
+  <h2>Todo</h2>
+
+  <div
+          cdkDropList
+          #todoList="cdkDropList"
+          [cdkDropListData]="todos"
+          [cdkDropListConnectedTo]="[doneList]"
+          class="example-list"
+          (cdkDropListDropped)="drop($event)">
+    <div class="example-box" *ngFor="let item of todos" cdkDrag>{{item.name}}
+      <button class="btn btn-danger" style="background-color: darkred" (click)="deleteTodo(item.id)"><i class="fas fa-trash-alt"></i></button>
+
+    </div>
+
   </div>
+</div>
+
+<div class="example-container">
+  <h2>Done</h2>
+
+  <div
+          cdkDropList
+          #doneList="cdkDropList"
+          [cdkDropListData]="done"
+          [cdkDropListConnectedTo]="[todoList,doneList]"
+          class="example-list"
+          (cdkDropListDropped)="drop($event)">
+    <div class="example-box"   *ngFor="let item of done" cdkDrag>
+      {{item.name}}
+      <button class="btn btn-danger" style="background-color: darkred" (click)="deleteTodo(item.id)"><i class="fas fa-trash-alt"></i></button>
+    </div>
   </div>
+</div>
+</div>
+
+
+
 

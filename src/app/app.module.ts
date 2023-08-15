@@ -21,6 +21,8 @@ import {DynamicComponentService} from "./dynamic-component.service";
 import {MatSlideToggleModule} from "@angular/material/slide-toggle";
 import { GraphQLModule } from './graphql.module';
 import {TodosComponent} from "./todos/todos.component";
+import {DragDropModule} from "@angular/cdk/drag-drop";
+
 
 
 
@@ -66,7 +68,8 @@ import {TodosComponent} from "./todos/todos.component";
     AngularFireStorageModule,
     FormsModule,
     ReactiveFormsModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    DragDropModule,
 
 
   ],
