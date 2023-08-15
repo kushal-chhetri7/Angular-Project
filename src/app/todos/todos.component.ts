@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Apollo } from 'apollo-angular';
 import { ADD_TODO, DELETE_TODO, GET_TODOS } from '../graphql/graphql.queries';
+import {CdkDragDrop, moveItemInArray, transferArrayItem} from "@angular/cdk/drag-drop";
 
 @Component({
   selector: 'app-todos',
@@ -11,6 +12,8 @@ import { ADD_TODO, DELETE_TODO, GET_TODOS } from '../graphql/graphql.queries';
 export class TodosComponent implements OnInit {
   todos: any[] = [];
   error: any;
+  done = [];
+
 
   todoForm = new FormGroup({
     name: new FormControl('', Validators.required),
@@ -74,6 +77,20 @@ export class TodosComponent implements OnInit {
 
   onClear(){
     this.todoForm.reset()
+  }
+
+
+  drop(event: CdkDragDrop<string[]>) {
+    if (event.previousContainer === event.container) {
+      moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
+    } else {
+      transferArrayItem(
+          event.previousContainer.data,
+          event.container.data,
+          event.previousIndex,
+          event.currentIndex,
+      );
+    }
   }
 
 
