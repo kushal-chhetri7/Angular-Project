@@ -66,8 +66,8 @@ function getOff(input:any) {
     }
   });
 }
-const input = 5;
 
+const input = 5;
 getOff(input).subscribe(
   result => {
     console.log(result);
