@@ -10,20 +10,19 @@ import {environment} from "../../environments/environment";
 import {DynamicComponentService} from "../dynamic-component.service";
 import {StatuscontainerComponent} from "../statuscontainer/statuscontainer.component";
 
-
 export interface AuthResponseData {
     idToken: string,
     email: string,
     refreshToken: string,
     expiresIn: string,
     localId: string,
-    registered?: boolean;  //optional for registering but for login it's important . TO check if user is already registered in the application
+    registered?: boolean;
 }
-
 
 @Injectable({
     providedIn: 'root'
 })
+  
 export class AuthService {
     user = new BehaviorSubject<User>(null)
     private timeOutWhenUserPressedLogout: any;
@@ -136,5 +135,3 @@ export class AuthService {
         return throwError(errorMessage);
     }
 }
-
-
