@@ -27,9 +27,10 @@ export class AuthService {
     user = new BehaviorSubject<User>(null)
     private timeOutWhenUserPressedLogout: any;
 
-    constructor(private http: HttpClient, private router: Router) {
-    }
+    constructor(private http: HttpClient,
+                private router: Router) {}
 
+  
     signUp(email: string, password: string) {
         return this.http.post<AuthResponseData>('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=' + environment.firebaseAPIkey,
             {
