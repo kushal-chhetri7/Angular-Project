@@ -16,7 +16,6 @@ const ADD_TODO = gql`
       id
       name
       description
-
     }
   }
 `
