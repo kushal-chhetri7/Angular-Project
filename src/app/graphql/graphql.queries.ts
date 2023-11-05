@@ -28,6 +28,4 @@ const DELETE_TODO = gql`
   }
   `
 
-
-
 export {GET_TODOS,ADD_TODO,DELETE_TODO}
