@@ -3,9 +3,6 @@ import { Routes, RouterModule } from '@angular/router';
 import {ShoppingListComponent} from "./shopping-list.component";
 import {SharedModule} from "../shared/shared.module";
 
-
-
-
 const shoppingRoutes: Routes = [
   { path: '', component: ShoppingListComponent },
 
@@ -17,5 +14,4 @@ const shoppingRoutes: Routes = [
   ],
   exports: [RouterModule]
 })
-export class ShoppingRouteModule {
-}
+export class ShoppingRouteModule {}
