@@ -7,13 +7,15 @@ import {DynamicComponentService} from "../dynamic-component.service";
   template: '<ng-container #dynamicComponentContainer></ng-container>'
 
 })
+
 export class StatuscontainerComponent  {
+
   @ViewChild('dynamicComponentContainer', { read: ViewContainerRef }) dynamicComponentContainer: ViewContainerRef;
 
   constructor(private dynamicComponentService: DynamicComponentService) {}
 
   ngAfterViewInit() {
-    this.dynamicComponentService.renderComponent('online', this.dynamicComponentContainer);
+  this.dynamicComponentService.renderComponent('online', this.dynamicComponentContainer);
   }
 
 
