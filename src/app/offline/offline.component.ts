@@ -5,6 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './offline.component.html',
   styleUrls: ['./offline.component.css']
 })
+
 export class OfflineComponent implements OnInit {
 
   constructor() { }
@@ -12,5 +13,4 @@ export class OfflineComponent implements OnInit {
   ngOnInit(): void {
 
   }
-
 }
