@@ -1,6 +1,6 @@
 # Recipe Book 
    
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.7.
+This project was generated with [Angular CLI](https://github.com/angular/an gular-cli) version 14.2.7.
           
 ## Development server          
    
